@@ -67,10 +67,7 @@ def logout():
     return redirect(url_for('login'))
 
 # --------------------- ANA SAYFA ---------------------
-@app.route('/')
-def home():
-    return redirect(url_for('login'))  # İlk açılışta login
-
+# Sadece bu fonksiyon kalsın, 'home' olanı tamamen silin.
 @app.route('/')
 @login_required
 def index():
