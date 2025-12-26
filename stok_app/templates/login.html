@@ -3,26 +3,15 @@
 {% block content %}
 <style>
     body {
-        /* Arka plan resmi */
-        background-image: url('https://i.pinimg.com/originals/dc/9c/c8/dc9cc8d2476d6c4a011bdeed01a7e8cd.jpg');
-        
-        /* Resmin tüm ekranı kaplamasını sağlar */
-        background-size: cover;
-        
-        /* Sayfa kaydırılsa bile resmin sabit kalmasını sağlar */
-        background-attachment: fixed;
-        
-        /* Resmi ortalar */
-        background-position: center;
-        
-        /* Tekrar etmesini engeller */
-        background-repeat: no-repeat;
+        background-image: url('https://i.pinimg.com/originals/dc/9c/c8/dc9cc8d2476d6c4a011bdeed01a7e8cd.jpg') !important;
+        background-size: cover !important;
+        background-attachment: fixed !important;
+        background-position: center !important;
     }
-
-    /* Form kutusunun arka planını hafif şeffaf yaparak resmi alttan hissettirebilirsiniz */
-    .login-box {
-        background-color: rgba(255, 255, 255, 0.9) !important; 
-        backdrop-filter: blur(5px); /* Arkayı hafif bulanıklaştırır, çok şıktır */
+.login-box {
+        background-color: rgba(255, 255, 255, 0.85) !important; 
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
     }
     .transparent-card {
         /* Arka planı tamamen şeffaf yapar veya çok hafif bir beyazlık verir */
@@ -47,8 +36,10 @@
         text-shadow: 1px 1px 4px rgba(0,0,0,0.5); /* Yazıların okunurluğunu artırır */
     }
 </style>
-<div class="row justify-content-center" style="margin-top: 150px;" >
+<div class="row justify-content-center" style="margin-top: 150px;">
+    
     <div class="col-md-4 border rounded p-4 shadow transparent-card">
+        
         <h2 class="mb-4 text-center">Giriş Yap</h2>
         
         {% with messages = get_flashed_messages(with_categories=true) %}
@@ -71,8 +62,10 @@
             <button type="submit" class="btn btn-primary w-100">Giriş</button>
         </form>
         
-        <hr> <p class="mt-3 text-center">
-            Hesabın yok mu? <a href="{{ url_for('register') }}" class="text-decoration-none">Kayıt ol</a>
+        <hr style="border-color: rgba(255,255,255,0.3);"> 
+        <p class="mt-3 text-center">
+            <span style="color: white;">Hesabın yok mu?</span> 
+            <a href="{{ url_for('register') }}" class="text-decoration-none fw-bold" style="color: #00d4ff;">Kayıt ol</a>
         </p>
     </div>
 </div>

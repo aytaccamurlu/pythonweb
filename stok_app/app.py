@@ -66,12 +66,12 @@ def logout():
     logout_user()
     return redirect(url_for('login'))
 
-# --------------------- ANA SAYFA ---------------------
-# Sadece bu fonksiyon kalsın, 'home' olanı tamamen silin.
+# --------------------- ANA SAYFA (Düzeltildi) ---------------------
 @app.route('/')
 @login_required
 def index():
     products = Product.query.all()
+    # current_user otomatik olarak template'e gider, ekstra bir şey yapmana gerek yok
     return render_template('index.html', products=products)
 
 # --------------------- CRUD ---------------------
